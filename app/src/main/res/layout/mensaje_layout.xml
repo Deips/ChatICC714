@@ -3,7 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/List_row_padding">
-    <TextView android:id="@+id/msjBody"
+
+    <TextView
+        android:id="@+id/msjBody"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/msjBody"
+        android:layout_toEndOf="@+id/msjBody"
+        android:paddingEnd="5dp"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp"
+        android:textStyle="bold|italic" />
+
 </RelativeLayout>

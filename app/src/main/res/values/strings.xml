@@ -2,4 +2,6 @@
     <string name="app_name">Chat ICC714</string>
     <string name="btn_enviar">Enviar</string>
     <string name="msj_input">Escribe aquí...</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo electrónico</string>
 </resources>

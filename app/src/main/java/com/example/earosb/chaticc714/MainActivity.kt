@@ -14,6 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (i) {
             R.id.btnEnviar -> {
-                enviarMensaje(txtMensaje.text.toString())
+                enviarMensaje(txtMensaje.text.toString(), getHora())
                 txtMensaje.setText("")
             }
         }
@@ -63,10 +64,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     /**
      * Envía mensaje a base de datos firebase
      */
-    private fun enviarMensaje(mensaje: String) {
-        val msj = Mensaje(mensaje);
+    private fun enviarMensaje(mensaje: String, hora: String) {
+        val msj = Mensaje(mensaje,hora);
         mMessageReferencia!!.push().setValue(msj)
     }
+
+
+
+    private fun getHora() = Calendar.getInstance().get(Calendar.HOUR_OF_DAY).toString() + ":" + Calendar.getInstance().get(Calendar.MINUTE).toString()
 
     private fun escucharMensajes() {
         val escuchadorMensajes = object : ValueEventListener {

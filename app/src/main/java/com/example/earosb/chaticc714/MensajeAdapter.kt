@@ -10,6 +10,7 @@ class MensajeAdapter(val mensajeList: ArrayList<Mensaje>): RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         holder?.msjBody?.text = mensajeList[position].body
+        holder?.hour?.text = mensajeList[position].hour
 
     }
 
@@ -24,6 +25,7 @@ class MensajeAdapter(val mensajeList: ArrayList<Mensaje>): RecyclerView.Adapter<
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val msjBody = itemView.findViewById<TextView>(R.id.msjBody)
+        val hour = itemView.findViewById<TextView>(R.id.hour)
     }
 
 }
